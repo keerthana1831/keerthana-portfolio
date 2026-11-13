@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  
+  body {
+    background-color: #87A96B; /* Sage Green Background */
+    color: #5A3E2B; /* Walnut Brown Wordings */
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar with Amber Glow & Sage Green */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #759759;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5851F; /* Amber Glow */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EEA758;
+}
+
+/* Subtle background patterns */
+.bg-grid-subtle {
+  background-size: 28px 28px;
+  background-image: 
+    linear-gradient(to right, rgba(90, 62, 43, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(90, 62, 43, 0.08) 1px, transparent 1px);
+}
+
+.bg-dots-subtle {
+  background-image: radial-gradient(rgba(213, 133, 31, 0.25) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glass effect aligned with Sage Green, Walnut Brown & Amber Glow */
+.glass-nav {
+  background: rgba(135, 169, 107, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(213, 133, 31, 0.35);
+}
+
+.glass-card {
+  background: rgba(244, 248, 241, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(213, 133, 31, 0.3);
+}
+
+.glass-card-featured {
+  background: linear-gradient(145deg, rgba(254, 248, 238, 0.96), rgba(244, 248, 241, 0.92));
+  border: 2px solid rgba(213, 133, 31, 0.65);
+  position: relative;
+}
+
+/* Clean animated underline with Amber Glow */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #D5851F; /* Amber Glow Highlight */
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
